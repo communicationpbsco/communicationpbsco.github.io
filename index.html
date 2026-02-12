@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Probability Creative Financial Solutions</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ================== STYLES ================== -->
+  <style>
+    :root {
+      --landing-primary: #0d3b66;
+      --landing-foreground: #fffef9;
+      --landing-secondary: #f4a460;
+      --landing-background: #eaeaea;
+      --landing-gradient-primary: linear-gradient(135deg, #0d3b66, #1b5fa7);
+
+      --font-primary: 'Segoe UI', sans-serif;
+
+      --hero-padding-y: clamp(4rem, 8vh, 8rem);
+      --hero-padding-x: clamp(1.5rem, 5vw, 6rem);
+      --hero-gap: clamp(2rem, 4vw, 5rem);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-primary);
+    }
+
+    /* ================== NAVBAR ================== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 48px;
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+   .logo {
+  width: 160px;
+  height: auto;
+}
+
+    .nav-links a {
+      margin-left: 28px;
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--landing-primary);
+    }
+
+    .nav-links a:hover {
+      color: var(--landing-secondary);
+    }
+
+    /* Push hero below navbar */
+    body {
+      padding-top: 80px;
+    }
+
+    /* ================== HERO SECTION ================== */
+    .hero-section {
+      position: relative;
+      width: 100%;
+      min-height: 85vh;
+      background-color: var(--landing-primary);
+      color: var(--landing-foreground);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: var(--hero-padding-y) var(--hero-padding-x);
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--landing-gradient-primary);
+      opacity: 0.85;
+      z-index: 1;
+    }
+
+    .hero-container {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--hero-gap);
+      max-width: 1400px;
+      margin: auto;
+      width: 100%;
+    }
+
+    @media (min-width: 992px) {
+      .hero-container {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+    }
+
+    /* ================== CONTENT ================== */
+    .hero-content {
+      max-width: 700px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .hero-label {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--landing-secondary);
+      font-weight: 600;
+      animation: fadeUp 0.8s forwards;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      animation: fadeUp 0.8s 0.2s forwards;
+      opacity: 0;
+    }
+
+    .hero-description {
+      font-size: clamp(1rem, 1.2vw, 1.25rem);
+      max-width: 540px;
+      color: var(--landing-background);
+      animation: fadeUp 0.8s 0.4s forwards;
+      opacity: 0;
+    }
+
+    /* ================== BUTTONS ================== */
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      margin-top: 12px;
+      animation: fadeUp 0.8s 0.6s forwards;
+      opacity: 0;
+    }
+
+    .btn {
+      padding: 16px 32px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: var(--landing-secondary);
+      color: var(--landing-primary);
+    }
+
+    .btn-primary:hover {
+      background: var(--landing-foreground);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.4);
+      color: var(--landing-foreground);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    /* ================== TRUST ================== */
+    .hero-trust {
+      display: flex;
+      gap: 24px;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      animation: fadeUp 0.8s 0.8s forwards;
+      opacity: 0;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--landing-background);
+    }
+
+    .trust-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--landing-secondary);
+      border-radius: 50%;
+    }
+
+    /* ================== IMAGE ================== */
+    .hero-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeScale 1s 0.4s forwards;
+      opacity: 0;
+    }
+
+    .image-wrapper {
+      max-height: 600px;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .image-wrapper:hover .hero-img {
+      transform: scale(1.04);
+    }
+
+    /* ================== ANIMATIONS ================== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeScale {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 768px) {
+      .hero-actions {
+        flex-direction: column;
+      }
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================== NAVBAR ================== -->
+  <header class="navbar">
+    <img src="images/probability-logo.png" alt="Probability Logo" class="logo">
+
+    <nav class="nav-links">
+      <a href="#Home">Home</a>
+      <a href="#Our Expertise">Our Expertise</a>
+      <a href="#Leadership">Leadership Team</a>
+      <a href="#Contact Us">Contact Us</a>
+    </nav>
+  </header>
+
+  <!-- ================== HERO ================== -->
+  <section class="hero-section"id="home">
+    <div class="hero-container">
+
+      <div class="hero-content">
+        <span class="hero-label">Financial Excellence</span>
+
+        <h1 class="hero-title">
+          Empowering Businesses with Tailored Financial Solutions
+        </h1>
+
+        <p class="hero-description">
+          Your trusted partner for Audit, GST, Government Advisory, and Strategic Financial Planning.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#" class="btn btn-primary">Get Expert Advice</a>
+          <a href="#" class="btn btn-secondary">Explore Services</a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="trust-item"><div class="trust-dot"></div>Audit & Assurance</div>
+          <div class="trust-item"><div class="trust-dot"></div>Strategic Planning</div>
+          <div class="trust-item"><div class="trust-dot"></div>Govt Advisory</div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="image-wrapper">
+          <img src="https://s3.amazonaws.com/media-prod.butternut.ai/website_images/portfolio/cd5b13b8-66b1-4b53-8d8e-1b28f0bcd05d.webp"
+               alt="Financial Advisory Team"
+               class="hero-img">
+        </div>
+      </div>
+
+    </div>
+  </section>
+<!-- ================== OUR EXPERTISE ================== -->
+<section id="expertise" style="padding: 100px 10%; background:#f5f5f5;">
+  <h2 style="font-size:36px; margin-bottom:20px; color:#0d3b66;">Our Expertise</h2>
+  <p style="max-width:800px; font-size:18px;">
+    We provide Audit & Assurance, GST Compliance, Government Advisory,
+    Risk Consulting, and Strategic Financial Planning for growing businesses.
+  </p>
+</section>
+
+<!-- ================== LEADERSHIP TEAM ================== -->
+<section id="leadership" style="padding: 100px 10%; background:#ffffff;">
+  <h2 style="font-size:36px; margin-bottom:20px; color:#0d3b66;">Leadership Team</h2>
+  <p style="max-width:800px; font-size:18px;">
+    Our leadership team consists of experienced Chartered Accountants
+    and financial professionals with decades of industry expertise.
+  </p>
+</section>
+
+<!-- ================== CONTACT ================== -->
+<section id="contact" style="padding: 100px 10%; background:#f5f5f5;">
+  <h2 style="font-size:36px; margin-bottom:20px; color:#0d3b66;">Contact Us</h2>
+  <p style="font-size:18px;">
+    📧 Email: vikas@pbsco.in <br><br>
+    📞 Phone: +91-9813015950 <br><br>
+    📍 Address: Your Office Address Here
+  </p>
+</section>
+
+</body>
+</html>
