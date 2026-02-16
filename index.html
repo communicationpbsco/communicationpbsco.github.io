@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Probability Creative Financial Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --landing-primary: #0d3b66;
+      --landing-foreground: #fffef9;
+      --landing-secondary: #f4a460;
+      --landing-gradient-primary: linear-gradient(135deg, #0d3b66, #1b5fa7);
+      --font-primary: 'Segoe UI', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: var(--font-primary);
+    }
+
+    body { padding-top: 80px; }
+
+    /* ============ NAVBAR ============ */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 48px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      z-index: 100;
+    }
+
+    .logo { width: 160px; }
+
+    .nav-links a {
+      margin-left: 28px;
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--landing-primary);
+    }
+
+    .nav-links a:hover { color: var(--landing-secondary); }
+
+    /* ============ HERO ============ */
+    .hero-section {
+      min-height: 85vh;
+      background: var(--landing-gradient-primary);
+      color: var(--landing-foreground);
+      display: flex;
+      align-items: center;
+      padding: 100px 10%;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .hero-title { font-size: 42px; line-height: 1.2; }
+    .hero-description { font-size: 18px; color: #eaeaea; }
+
+    .hero-actions {
+      margin-top: 20px;
+      display: flex;
+      gap: 16px;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 4px;
+    }
+
+    .btn-primary {
+      background: var(--landing-secondary);
+      color: var(--landing-primary);
+    }
+
+    .btn-secondary {
+      border: 1px solid #fff;
+      color: #fff;
+    }
+
+    .image-wrapper {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    section { padding: 100px 10%; }
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: var(--landing-primary);
+    }
+
+    p { font-size: 18px; max-width: 800px; }
+  </style>
+</head>
+
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar">
+  <img src="images/probability-logo.png" class="logo" alt="Probability Logo">
+
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Our Expertise</a>
+    <a href="experts.html">Leadership Team</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero-section">
+  <div class="hero-container">
+
+    <div>
+      <span style="color:#f4a460; letter-spacing:2px;">FINANCIAL EXCELLENCE</span>
+
+      <h1 class="hero-title">
+        Empowering Businesses with Tailored Financial Solutions
+      </h1>
+
+      <p class="hero-description">
+        Your trusted partner for Audit, GST, Government Advisory, and Strategic Financial Planning.
+      </p>
+
+      <div class="hero-actions">
+        <a href="contact.html" class="btn btn-primary">Get Expert Advice</a>
+
+        <!-- ✅ THIS OPENS services.html -->
+        <a href="services.html" class="btn btn-secondary">Explore Services</a>
+      </div>
+    </div>
+
+    <div class="image-wrapper">
+      <img src="https://s3.amazonaws.com/media-prod.butternut.ai/website_images/portfolio/cd5b13b8-66b1-4b53-8d8e-1b28f0bcd05d.webp"
+           alt="Financial Advisory"
+           class="hero-img">
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>

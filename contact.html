@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact Us | Probability</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #2b73b6;
+    color: #ffffff;
+}
+
+.contact-section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 70px 40px;
+    display: flex;
+    gap: 60px;
+}
+
+/* LEFT SIDE */
+.left {
+    flex: 1;
+}
+
+.left h1 {
+    font-size: 42px;
+    line-height: 1.2;
+    color: #fff4c4;
+}
+
+.left p {
+    font-size: 18px;
+    color: #e6f0ff;
+    margin: 20px 0 40px;
+}
+
+.box {
+    background: #1f5e9c;
+    padding: 25px;
+    border-radius: 14px;
+    margin-bottom: 25px;
+}
+
+.box h4 {
+    margin: 0 0 10px;
+    font-size: 14px;
+    color: #cfe2ff;
+}
+
+.box p {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* RIGHT FORM */
+.right {
+    flex: 1;
+    background: #1f5e9c;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+label {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    border: none;
+    background: #134b80;
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
+textarea {
+    height: 130px;
+    resize: none;
+}
+
+button {
+    background: #fff2c2;
+    color: #1f5e9c;
+    padding: 16px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ffe89a;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+    .contact-section {
+        flex-direction: column;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<section class="contact-section">
+
+    <!-- LEFT -->
+    <div class="left">
+        <h1>
+            Connect with<br>
+            Probability Creative<br>
+            Financial Solutions
+        </h1>
+
+        <p>
+            Ready to take your business to new heights?
+            Reach out to us today.
+        </p>
+
+        <div class="box">
+            <h4>📍 VISIT US</h4>
+            <p>
+                SCO No 137/138, 1st Floor,<br>
+                Near OPS School Sector-13,<br>
+                Karnal – 132001, Haryana
+            </p>
+        </div>
+
+        <div class="box">
+            <h4>📞 CALL US</h4>
+            <p>+91 9813015950</p>
+        </div>
+
+        <div class="box">
+            <h4>✉️ EMAIL US</h4>
+            <p>vikas@pbsco.in</p>
+        </div>
+    </div>
+
+    <!-- RIGHT FORM -->
+    <div class="right">
+        <form onsubmit="sendWhatsApp(); return false;">
+            <label>Full Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label>Email Address</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label>How can we help?</label>
+            <textarea id="message" placeholder="Tell us about your project..." required></textarea>
+
+            <button type="submit">CONTACT US NOW</button>
+        </form>
+    </div>
+
+</section>
+
+<script>
+function sendWhatsApp() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+
+    var phone = "919813015950";
+
+    var text =
+        "Name: " + name + "%0A" +
+        "Email: " + email + "%0A" +
+        "Message: " + message;
+
+    var url = "https://wa.me/" + phone + "?text=" + text;
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
