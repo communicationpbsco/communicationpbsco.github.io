@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Probability Creative Financial Solutions</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* ================== GLOBAL ================== */
+html { scroll-behavior: smooth; }
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #faf9f6;
+    color: #333;
+}
+
+section { padding: 90px 10%; }
+h1, h2 { color: #0d3b66; margin-bottom: 20px; }
+p { font-size: 17px; line-height: 1.7; }
+
+/* ================== NAVBAR ================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 24px;
+    box-sizing:border-box;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    z-index: 1000;
+}
+.logo { width: 150px; }
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  flex-wrap:nowrap;
+}         /* equal spacing */
+
+.nav-links a {
+    margin-left: 0;
+    white-space:nowrap;
+    text-decoration: none;
+    font-size:15px;
+    font-weight: 600;
+    color: #0d3b66;
+}
+.nav-links a:hover { color: #f4a460; }
+
+
+/* ================== HERO (IMAGE BACKGROUND) ================== */
+
+.hero{
+  .hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:8px 18px;
+    border-radius:30px;
+    background:rgba(255,255,255,0.9);
+    color:#d49a3a;
+    font-weight:700;
+    font-size:14px;
+    letter-spacing:1px;
+    margin-bottom:22px;
+}
+
+/* ================== HERO CTA BUTTONS ================== */
+
+.hero-cta-group{
+  margin-top:35px;
+}
+
+.hero-cta-row{
+  display:flex;
+  gap:22px;
+  flex-wrap:wrap;
+}
+
+.hero-cta-center{
+  margin-top:22px;
+  text-align:center;
+}
+
+/* outline button */
+.btn-outline{
+  background:transparent;
+  border:2px solid #f4a460;
+  color:#f4a460;
+}
+
+/* highlight button */
+.btn-highlight{
+  background:#ffffff;
+  color:#0d3b66;
+  font-weight:800;
+  padding:16px 36px;
+  border-radius:8px;
+  box-shadow:0 12px 28px rgba(0,0,0,0.25);
+}
+
+.hero-badge span{
+    font-size:16px;
+}
+
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:0 10%;
+    color:#fff;
+
+    background:
+      linear-gradient(
+        rgba(13,59,102,0.78),
+        rgba(13,59,102,0.78)
+      ),
+      url("images/hero-finance.jpg") center/cover no-repeat;
+}
+
+.hero h1{
+    font-size:48px;
+    color:#fff;
+}
+
+.hero p{
+    font-size:18px;
+    color:#f1f5ff;
+    max-width:520px;
+}
+
+
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 28px;
+    background: #f4a460;
+    color: #0d3b66;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+/* ================== VISION ================== */
+
+.vision{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+
+.vision-text h2{
+  font-size:42px;
+  margin-bottom:15px;
+}
+
+.vision-desc{
+  font-size:18px;
+  margin-bottom:35px;
+  max-width:520px;
+}
+
+.vision-point{
+  display:flex;
+  align-items:flex-start;
+  gap:18px;
+  padding:18px 0;
+  border-top:1px solid #d7e6f5;
+}
+
+.vision-point:last-child{
+  border-bottom:1px solid #d7e6f5;
+}
+
+.vision-point h4{
+  margin:0;
+  font-size:18px;
+  color:#0d3b66;
+}
+
+.vision-point p{
+  margin:5px 0 0;
+  font-size:16px;
+}
+
+.vision-point .icon{
+  font-size:28px;
+  background:#eef5ff;
+  padding:14px;
+  border-radius:50%;
+  color:#1b5fa7;
+}
+
+.vision img{
+  width:100%;
+  border-radius:24px;
+}
+
+
+/* ================== SERVICES ================== */
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:35px;
+}
+
+.service-card{
+  background:#fff4cc;
+  padding:55px 20px;
+  border-radius:22px;
+  text-align:center;
+  text-decoration:none;
+  color:#1b5fa7;
+  font-weight:700;
+  font-size:18px;
+  transition:.35s ease;
+}
+
+.service-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 18px 35px rgba(0,0,0,.18);
+}
+
+/* ================== EXPERTS ================== */
+
+.experts-section{
+  text-align:center;
+}
+
+.experts-title{
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.experts-subtitle{
+  font-size:18px;
+  max-width:700px;
+  margin:0 auto 60px;
+  color:#555;
+}
+
+.experts-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;
+}
+
+.expert-card{
+  background:#fff4cc;
+  padding:45px 30px;
+  border-radius:22px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.08);
+}
+
+.expert-card img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:18px;
+  border:4px solid #fff;
+}
+
+.expert-card h3{
+  color:#1b5fa7;
+  margin-bottom:12px;
+}
+
+.expert-card p{
+  font-size:16px;
+  line-height:1.6;
+}
+
+/* ================== CONTACT ================== */
+.contact {
+    background: #2b73b6;
+    color: #fff;
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: stretch;
+}
+
+.contact h2 {
+    font-size: 44px;
+    color: #fff;
+}
+
+.contact p {
+    color: #eaf2ff;
+}
+
+.contact-info-box {
+    background: rgba(255,255,255,0.1);
+    padding: 22px;
+    border-radius: 14px;
+    margin-top: 20px;
+}
+
+.contact-info-box strong {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.contact-form {
+    background: rgba(0,0,0,0.15);
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 22px;
+    border-radius: 10px;
+    border: none;
+    background: #134b80;
+    color: #fff;
+}
+
+.contact-form button {
+    background: #fff2c2;
+    padding: 14px 30px;
+    border: none;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ================== MOBILE ================== */
+@media(max-width:900px){
+    .contact-wrapper{grid-template-columns:1fr;}
+}
+
+
+/* ================== FOOTER ================== */
+footer {
+    background: #1f5e9c;
+    color: #e6f0ff;
+    padding: 50px 10%;
+}
+
+/* ================== MOBILE ================== */
+@media(max-width:900px){ 
+   .hero-cta-row{
+    justify-content:center;
+  }
+    .hero-badge{
+    font-size:13px;
+    margin:0 auto 20px;
+  }
+   .vision,.contact-grid{grid-template-columns:1fr;}
+    section{padding:70px 6%;}
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+<img src="images/probability-logo.png" class="logo">
+<nav class="nav-links">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#experts">Experts</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div>
+
+    <!-- BADGE LINE -->
+    <div class="hero-badge">
+      <span>🛡</span> TRUSTED FINANCIAL ADVISORY SINCE 2008
+    </div>
+
+    <h1>Empowering Businesses with Financial Excellence</h1>
+
+    <p>Audit • GST • Government Advisory • Risk & Financial Strategy</p>
+
+    <div class="hero-cta-group">
+
+  <div class="hero-cta-row">
+    <div class="hero-cta-group">
+
+  <!-- Row 1: Two buttons -->
+  <div class="hero-cta-row">
+    <a href="#services" class="btn">Explore Services</a>
+    <a href="#experts" class="btn btn-outline">Meet The Experts</a>
+  </div>
+
+  <!-- Row 2: Centered button -->
+  <div class="hero-cta-center">
+    <a href="#contact" class="btn btn-highlight">Book Consultation</a>
+  </div>
+
+</div>
+
+</div>
+
+
+  </div>
+</section>
+
+
+<!-- ABOUT / VISION -->
+<section id="about" class="vision">
+  <div class="vision-text">
+    <h2>A Vision for Excellence</h2>
+    <p class="vision-desc">
+      Founded by Vikas Aggarwal with a mission to empower businesses
+      through integrity and tailored financial strategies.
+    </p>
+
+    <div class="vision-point">
+      <span class="icon">📊</span>
+      <div>
+        <h4>Strategic Insights</h4>
+        <p>Navigating complex financial landscapes.</p>
+      </div>
+    </div>
+
+    <div class="vision-point">
+      <span class="icon">🛡️</span>
+      <div>
+        <h4>In-Depth Compliance</h4>
+        <p>Expertise in GST and Government Incentives.</p>
+      </div>
+    </div>
+
+    <div class="vision-point">
+      <span class="icon">🤝</span>
+      <div>
+        <h4>Client-Centric Approach</h4>
+        <p>Dedicated to unlocking your full financial potential.</p>
+      </div>
+    </div>
+  </div>
+
+  <img src="images/vision.jpg" alt="Vision Image">
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <h2>Our Expertise</h2>
+  <p>Click on any service to explore details</p>
+
+  <div class="services-grid">
+    <a href="services/audit.html" class="service-card">Audit & Assurance</a>
+    <a href="services/gst.html" class="service-card">Goods & Service Tax (GST)</a>
+    <a href="services/government.html" class="service-card">Government Advisory & Incentives</a>
+    <a href="services/foreign-trade.html" class="service-card">Foreign Trade Services</a>
+    <a href="services/ers.html" class="service-card">Enterprise Risk Services (ERS)</a>
+    <a href="services/fas.html" class="service-card">Financial Advisory Services (FAS)</a>
+    <a href="services/insurance.html" class="service-card">Insurance Solutions</a>
+    <a href="services/industrial.html" class="service-card">Government Industrial Advisory</a>
+  </div>
+
+
+<div id="audit" class="service-detail">
+<h3>Audit & Assurance</h3>
+<p>Beyond compliance — benchmarking, efficiency, and strategic insight.</p>
+</div>
+
+<div id="gst" class="service-detail">
+<h3>Goods & Service Tax</h3>
+<p>Complete GST advisory, audits, refunds, and litigation support.</p>
+</div>
+
+<div id="ers" class="service-detail">
+<h3>Enterprise Risk Services</h3>
+<p>Led by Mr. Pradeep Kumar (30+ years Govt. experience).</p>
+</div>
+
+<div id="fas" class="service-detail">
+<h3>Financial Advisory Services</h3>
+<p>Led by Mr. Akassh Arora — banking, credit & performance strategy.</p>
+</div>
+</section>
+
+<!-- EXPERTS -->
+<section id="experts" class="experts-section">
+
+  <h2 class="experts-title">Meet The Experts</h2>
+  <p class="experts-subtitle">
+    Decades of experience across Big 4 firms, Banking, and Government sectors.
+  </p>
+
+  <div class="experts-grid">
+    <div class="expert-card">
+      <img src="images/vikas.jpg" alt="Vikas Aggarwal">
+      <h3>Mr. Vikas Aggarwal</h3>
+      <p>
+        Ex-Deloitte & Delmonte. Expert in Government advisory and GST.
+        Leading with vision since 2008.
+      </p>
+    </div>
+
+    <div class="expert-card">
+      <img src="images/pradeep.jpg" alt="Pradeep Kumar">
+      <h3>Mr. Pradeep Kumar</h3>
+      <p>
+        Advocate with 30 years experience. Retired State Govt Official
+        (Sales Tax Dept). Expert in VAT & Tax Administration.
+      </p>
+    </div>
+
+    <div class="expert-card">
+      <img src="images/akassh.jpg" alt="Akassh Arora">
+      <h3>Mr. Akassh Arora</h3>
+      <p>
+        MBA (Finance) & B.Com. 7+ years in Banking.
+        Specialist in Credit, Operations, and Financial Management.
+      </p>
+    </div>
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+<div class="contact-wrapper">
+
+<!-- LEFT CONTENT -->
+<div>
+<h2>Connect with<br>Probability Creative<br>Financial Solutions</h2>
+<p>Ready to take your business to new heights? Reach out to us today.</p>
+
+<div class="contact-info-box">
+<strong>📍 VISIT US</strong>
+SCO No 137/138, 1st Floor,<br>
+Near OPS School Sector-13,<br>
+Karnal – 132001, Haryana
+</div>
+
+<div class="contact-info-box">
+<strong>📞 CALL US</strong>
++91 9813015950
+</div>
+
+<div class="contact-info-box">
+<strong>✉ EMAIL US</strong>
+vikas@pbsco.in
+</div>
+</div>
+
+<!-- RIGHT FORM -->
+<div class="contact-form">
+<form onsubmit="sendWhatsApp();return false;">
+<label>Full Name</label>
+<input id="name" placeholder="Enter your name" required>
+
+<label>Email Address</label>
+<input id="email" placeholder="Enter your email" required>
+
+<label>How can we help?</label>
+<textarea id="message" rows="6" placeholder="Tell us about your project..." required></textarea>
+
+<button>CONTACT US NOW</button>
+</form>
+</div>
+
+</div>
+</section>
+
+
+<footer>
+<p>© 2025 Probability Business Solutions</p>
+</footer>
+
+<script>
+function toggle(id){
+document.querySelectorAll('.service-detail').forEach(d=>d.style.display='none');
+document.getElementById(id).style.display='block';
+}
+function sendWhatsApp(){
+var text=`Name: ${name.value}%0AEmail: ${email.value}%0AMessage: ${message.value}`;
+window.open("https://wa.me/919813015950?text="+text);
+}
+</script>
+
+</body>
+</html>

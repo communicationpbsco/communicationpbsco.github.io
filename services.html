@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Services</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fffdf6;
+            margin: 0;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #2a6dbb;
+            font-size: 34px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .box {
+            background: #fff4cc;
+            padding: 40px 25px;
+            border-radius: 18px;
+            text-align: center;
+            min-height: 160px;   /* ⭐ BOX HEIGHT INCREASE */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        .box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .box a {
+            text-decoration: none;
+            color: #2a6dbb;
+            font-size: 20px;     /* ⭐ TEXT BIGGER */
+            font-weight: bold;
+            line-height: 1.4;
+        }
+
+        /* ✅ Responsive for tablets */
+        @media (max-width: 1024px) {
+            .services {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ✅ Responsive for mobile */
+        @media (max-width: 600px) {
+            .services {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Comprehensive Financial Services</h1>
+    <p>Click on any service to view details</p>
+
+    <div class="services">
+        <div class="box"><a href="services/audit-assurance.html">Audit & Assurance</a></div>
+        <div class="box"><a href="services/gst.html">Goods & Service Tax (GST)</a></div>
+        <div class="box"><a href="services/govt-advisory.html">Government Advisory & Incentives</a></div>
+        <div class="box"><a href="services/foreign-trade.html">Foreign Trade Services</a></div>
+
+        <div class="box"><a href="services/ers.html">Enterprise Risk Services (ERS)</a></div>
+        <div class="box"><a href="services/fas.html">Financial Advisory Services (FAS)</a></div>
+        <div class="box"><a href="services/insurance.html">Insurance Solutions</a></div>
+        <div class="box"><a href="services/govt-industrial.html">Government Industrial Advisory</a></div>
+    </div>
+
+</body>
+</html>
