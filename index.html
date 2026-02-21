@@ -341,6 +341,32 @@ p { font-size: 17px; line-height: 1.7; }
     border-radius: 8px;
     cursor: pointer;
 }
+/* ================== WHATSAPP FLOAT BUTTON ================== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background-color:none;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+    z-index: 9999;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float img {
+    width: 65px;
+    height: 65px;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover img {
+    transform: scale(1.12);
+}
 
 /* ================== MOBILE ================== */
 @media(max-width:900px){
@@ -464,15 +490,16 @@ footer {
   <p>Click on any service to explore details</p>
 
   <div class="services-grid">
-    <a href="services/audit.html" class="service-card">Audit & Assurance</a>
+    <a href="services/audit-assurance.html" class="service-card">Audit & Assurance</a>
     <a href="services/gst.html" class="service-card">Goods & Service Tax (GST)</a>
-    <a href="services/government.html" class="service-card">Government Advisory & Incentives</a>
+    <a href="services/govt-advisory.html" class="service-card">Government Advisory & Incentives</a>
     <a href="services/foreign-trade.html" class="service-card">Foreign Trade Services</a>
     <a href="services/ers.html" class="service-card">Enterprise Risk Services (ERS)</a>
     <a href="services/fas.html" class="service-card">Financial Advisory Services (FAS)</a>
     <a href="services/insurance.html" class="service-card">Insurance Solutions</a>
-    <a href="services/industrial.html" class="service-card">Government Industrial Advisory</a>
+    <a href="services/govt-industrial.html" class="service-card">Government Industrial Advisory</a>
   </div>
+</section>
 
 
 <div id="audit" class="service-detail">
@@ -596,6 +623,14 @@ var text=`Name: ${name.value}%0AEmail: ${email.value}%0AMessage: ${message.value
 window.open("https://wa.me/919813015950?text="+text);
 }
 </script>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/919813015950" 
+   class="whatsapp-float" 
+   target="_blank" 
+   aria-label="Chat on WhatsApp">
+   <img src="images/whatsapp.png" alt="WhatsApp">
+</a>
 
 </body>
 </html>
